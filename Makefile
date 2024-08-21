@@ -8,10 +8,6 @@ clean: Makefile.coq
 Makefile.coq: _CoqProject
 	$(COQBIN)coq_makefile -f _CoqProject -o Makefile.coq
 
-mk_theorems.v : mk_structure.v
-reals_axioms.v : mk_theorems.v
-reals_uniqueness.v : reals_axioms.v
-
 force _CoqProject Makefile: ;
 
 %: Makefile.coq force
